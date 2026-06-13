@@ -91,9 +91,7 @@ function showToast(msg, type = 'success') {
   toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
 }
 
-/* ══════════════════════════════
-   STATS & PROGRESS RING
-══════════════════════════════ */
+
 function updateStats() {
   const total     = tasks.length;
   const done      = tasks.filter(t => t.completed).length;
@@ -110,9 +108,6 @@ function updateStats() {
   ringFill.style.strokeDashoffset = offset;
 }
 
-/* ══════════════════════════════
-   RENDER
-══════════════════════════════ */
 function getFilteredTasks() {
   let list = [...tasks];
 
@@ -202,9 +197,6 @@ function escapeHtml(str) {
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-/* ══════════════════════════════
-   ADD TASK
-══════════════════════════════ */
 function addTask() {
   const text = taskInput.value.trim();
   if (!text) {
