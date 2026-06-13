@@ -86,19 +86,12 @@ body {
   pointer-events: none; z-index: 0;
 }
 
-/* ══════════════════════════════
-   LAYOUT
-══════════════════════════════ */
 .app {
   display: flex;
   min-height: 100vh;
   position: relative;
   z-index: 1;
 }
-
-/* ══════════════════════════════
-   SIDEBAR
-══════════════════════════════ */
 .sidebar {
   width: var(--sidebar-w);
   flex-shrink: 0;
@@ -286,9 +279,6 @@ body {
   border-top: 1px solid var(--border);
 }
 
-/* ══════════════════════════════
-   MAIN
-══════════════════════════════ */
 .main {
   flex: 1;
   padding: 2rem 3.5rem;
@@ -598,9 +588,6 @@ body.light .date-input { color-scheme: light; }
 .bulk-action-btn:hover { border-color: var(--border-h); color: var(--gold); background: var(--gold-dim); }
 .bulk-action-btn.danger:hover { border-color: var(--red); color: var(--red); background: var(--red-dim); }
 
-/* ══════════════════════════════
-   TASK LIST
-══════════════════════════════ */
 .task-list {
   display: flex;
   flex-direction: column;
@@ -647,7 +634,6 @@ body.light .date-input { color-scheme: light; }
   box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
 
-/* Completed state */
 .task-card.completed {
   opacity: 0.55;
 }
@@ -830,9 +816,6 @@ body.light .date-input { color-scheme: light; }
   max-width: 280px;
 }
 
-/* ══════════════════════════════
-   TOAST
-══════════════════════════════ */
 .toast {
   position: fixed;
   bottom: 1.8rem; left: 50%;
@@ -861,9 +844,7 @@ body.light .date-input { color-scheme: light; }
 .toast.error   .toast-dot { background: var(--red); }
 .toast.info    .toast-dot { background: var(--blue); }
 
-/* ══════════════════════════════
-   EDIT MODAL
-══════════════════════════════ */
+
 .modal-overlay {
   position: fixed; inset: 0;
   background: rgba(0,0,0,0.65);
@@ -984,9 +965,6 @@ body.light .modal-input { color-scheme: light; }
 }
 .modal-save:hover { transform: translateY(-2px); box-shadow: 0 6px 18px var(--gold-glow); }
 
-/* ══════════════════════════════
-   RESPONSIVE
-══════════════════════════════ */
 @media (max-width: 820px) {
   .sidebar {
     position: fixed;
