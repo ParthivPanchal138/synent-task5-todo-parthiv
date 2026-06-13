@@ -223,10 +223,6 @@ function addTask() {
   taskInput.focus();
   showToast('Task added!', 'success');
 }
-
-/* ══════════════════════════════
-   COMPLETE TASK
-══════════════════════════════ */
 function toggleComplete(id) {
   const task = tasks.find(t => t.id === id);
   if (!task) return;
@@ -236,9 +232,6 @@ function toggleComplete(id) {
   showToast(task.completed ? 'Task completed! ✓' : 'Task reopened.', task.completed ? 'success' : 'info');
 }
 
-/* ══════════════════════════════
-   DELETE TASK
-══════════════════════════════ */
 function deleteTask(id) {
   const card = taskList.querySelector(`[data-id="${id}"]`);
   if (card) {
