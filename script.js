@@ -248,10 +248,6 @@ function deleteTask(id) {
   }
   showToast('Task deleted.', 'error');
 }
-
-/* ══════════════════════════════
-   EDIT TASK
-══════════════════════════════ */
 function openEdit(id) {
   const task = tasks.find(t => t.id === id);
   if (!task) return;
@@ -292,9 +288,6 @@ function saveEdit() {
   showToast('Task updated!', 'info');
 }
 
-/* ══════════════════════════════
-   BULK ACTIONS
-══════════════════════════════ */
 function getSelectedIds() {
   return [...document.querySelectorAll('.task-select:checked')].map(el => el.dataset.id);
 }
@@ -333,10 +326,6 @@ clearCompleted.addEventListener('click', () => {
   saveTasks(); render();
   showToast(`${count} completed task(s) cleared.`, 'success');
 });
-
-/* ══════════════════════════════
-   EVENT DELEGATION — TASK LIST
-══════════════════════════════ */
 taskList.addEventListener('click', (e) => {
   const completeInput = e.target.closest('.task-complete');
   const editBtn       = e.target.closest('.edit-btn');
@@ -347,9 +336,6 @@ taskList.addEventListener('click', (e) => {
   if (delBtn)        deleteTask(delBtn.dataset.id);
 });
 
-/* ══════════════════════════════
-   FILTERS
-══════════════════════════════ */
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -359,9 +345,6 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-/* ══════════════════════════════
-   SEARCH
-══════════════════════════════ */
 searchInput.addEventListener('input', () => {
   searchQuery = searchInput.value.trim();
   searchClear.classList.toggle('visible', searchQuery.length > 0);
@@ -376,9 +359,6 @@ searchClear.addEventListener('click', () => {
   searchInput.focus();
 });
 
-/* ══════════════════════════════
-   PRIORITY SELECTOR (add form)
-══════════════════════════════ */
 prioBtn.addEventListener('click', (e) => {
   e.stopPropagation();
   prioDropdown.classList.toggle('open');
@@ -399,18 +379,12 @@ document.addEventListener('click', (e) => {
   }
 });
 
-/* ══════════════════════════════
-   ADD TASK EVENTS
-══════════════════════════════ */
 addBtn.addEventListener('click', addTask);
 
 taskInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') addTask();
 });
 
-/* ══════════════════════════════
-   EDIT MODAL EVENTS
-══════════════════════════════ */
 editClose.addEventListener('click',  closeEdit);
 editCancel.addEventListener('click', closeEdit);
 editSave.addEventListener('click',   saveEdit);
@@ -432,9 +406,6 @@ document.querySelectorAll('.modal-prio-btn').forEach(btn => {
   });
 });
 
-/* ══════════════════════════════
-   THEME TOGGLE
-══════════════════════════════ */
 const savedTheme = localStorage.getItem('ss-todo-theme') || 'dark';
 if (savedTheme === 'light') {
   document.body.classList.add('light');
@@ -447,9 +418,6 @@ themeBtn.addEventListener('click', () => {
   localStorage.setItem('ss-todo-theme', isLight ? 'light' : 'dark');
 });
 
-/* ══════════════════════════════
-   MOBILE SIDEBAR TOGGLE
-══════════════════════════════ */
 mobSidebarBtn.addEventListener('click', () => {
   sidebar.classList.toggle('open');
 });
@@ -462,9 +430,6 @@ document.addEventListener('click', (e) => {
   }
 });
 
-/* ══════════════════════════════
-   KEYBOARD SHORTCUTS
-══════════════════════════════ */
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeEdit();
 
@@ -481,9 +446,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-/* ══════════════════════════════
-   SEED DEMO TASKS (first visit)
-══════════════════════════════ */
 function seedDemoTasks() {
   if (localStorage.getItem(STORAGE_KEY)) return;
 
@@ -504,10 +466,6 @@ function seedDemoTasks() {
 
   saveTasks();
 }
-
-/* ══════════════════════════════
-   INIT
-══════════════════════════════ */
 function init() {
   setMainDate();
   loadTasks();

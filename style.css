@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
 
-/* ══════════════════════════════
-   VARIABLES — DARK
-══════════════════════════════ */
 :root {
   --bg:         #07070e;
   --bg2:        #0c0c16;
@@ -32,7 +29,6 @@
   --low:    #4ade80;
 }
 
-/* LIGHT THEME */
 body.light {
   --bg:       #f4f1eb;
   --bg2:      #ece8e0;
@@ -49,9 +45,6 @@ body.light {
   --muted2:   #6a6860;
 }
 
-/* ══════════════════════════════
-   RESET & BASE
-══════════════════════════════ */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
 html {
