@@ -42,9 +42,6 @@ const statAll       = document.getElementById('statAll');
 const statActive    = document.getElementById('statActive');
 const statDone      = document.getElementById('statDone');
 
-/* ══════════════════════════════
-   STORAGE
-══════════════════════════════ */
 function saveTasks() {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
@@ -61,17 +58,10 @@ function loadTasks() {
     tasks = [];
   }
 }
-
-/* ══════════════════════════════
-   GENERATE ID
-══════════════════════════════ */
 function genId() {
   return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
 }
 
-/* ══════════════════════════════
-   DATE HELPERS
-══════════════════════════════ */
 function formatDate(dateStr) {
   if (!dateStr) return '';
   const d = new Date(dateStr + 'T00:00:00');
@@ -92,9 +82,6 @@ function setMainDate() {
   });
 }
 
-/* ══════════════════════════════
-   TOAST
-══════════════════════════════ */
 let toastTimer;
 function showToast(msg, type = 'success') {
   toast.className = `toast ${type}`;
