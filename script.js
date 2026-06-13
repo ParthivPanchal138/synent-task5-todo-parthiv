@@ -1,8 +1,5 @@
 'use strict';
 
-/* ══════════════════════════════
-   STATE
-══════════════════════════════ */
 let tasks        = [];
 let currentFilter = 'all';
 let editingId     = null;
@@ -12,9 +9,6 @@ let searchQuery   = '';
 
 const STORAGE_KEY = 'stackspark-tasks';
 
-/* ══════════════════════════════
-   ELEMENT REFS
-══════════════════════════════ */
 const taskList      = document.getElementById('taskList');
 const taskInput     = document.getElementById('taskInput');
 const addBtn        = document.getElementById('addBtn');
